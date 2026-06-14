@@ -1,0 +1,29 @@
+{
+  "package": "@przeprogramowani/10x-cli",
+  "version": "1.8.0",
+  "manifestVersion": 3,
+  "lastApplied": "2026-06-14T07:44:36.677Z",
+  "lessonId": "m0l1",
+  "course": "10xdevs3",
+  "tool": "codex",
+  "files": {
+    "skills": {},
+    "prompts": [
+      "m0l1-prework.md"
+    ],
+    "configs": [],
+    "promptHashes": {
+      "m0l1-prework.md": "5639e83e21b76981077b48ed3bb47d438deeed7c5e6997c1e34af39da0426e8d"
+    }
+  },
+  "lessons": {
+    "m0l1": {
+      "appliedAt": "2026-06-14T07:44:36.676Z",
+      "skills": {},
+      "prompts": [
+        "m0l1-prework.md"
+      ],
+      "configs": []
+    }
+  }
+}
