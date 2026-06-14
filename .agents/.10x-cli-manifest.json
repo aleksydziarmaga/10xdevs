@@ -2,12 +2,39 @@
   "package": "@przeprogramowani/10x-cli",
   "version": "1.8.0",
   "manifestVersion": 3,
-  "lastApplied": "2026-06-14T07:44:36.677Z",
-  "lessonId": "m0l1",
+  "lastApplied": "2026-06-14T09:11:45.895Z",
+  "lessonId": "m1l1",
   "course": "10xdevs3",
   "tool": "codex",
   "files": {
-    "skills": {},
+    "skills": {
+      "10x-init": {
+        "files": [
+          "SKILL.md"
+        ],
+        "contentHashes": {
+          "SKILL.md": "42f2fea16d2e9e46e9f1fd25f98d7426b4f72fe474ba596d08dbdf87a91c3e36"
+        }
+      },
+      "10x-shape": {
+        "files": [
+          "references/prd-schema.md",
+          "SKILL.md"
+        ],
+        "contentHashes": {
+          "references/prd-schema.md": "69e487a419e06fedd9d7761a6be1f375b5290839bdc58eaca1c1f64fe5f3516e",
+          "SKILL.md": "49d3ec4c3428c866f0edcbff52fd75f1edba195308ed9f1653b90f1f92b27109"
+        }
+      },
+      "10x-prd": {
+        "files": [
+          "SKILL.md"
+        ],
+        "contentHashes": {
+          "SKILL.md": "947421e9fc998a99b4e6138c2d757922544ddf8e4ae8adfb04dccb1b37249e72"
+        }
+      }
+    },
     "prompts": [
       "m0l1-prework.md"
     ],
@@ -23,6 +50,29 @@
       "prompts": [
         "m0l1-prework.md"
       ],
+      "configs": []
+    },
+    "m1l1": {
+      "appliedAt": "2026-06-14T09:11:45.895Z",
+      "skills": {
+        "10x-init": {
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "10x-shape": {
+          "files": [
+            "references/prd-schema.md",
+            "SKILL.md"
+          ]
+        },
+        "10x-prd": {
+          "files": [
+            "SKILL.md"
+          ]
+        }
+      },
+      "prompts": [],
       "configs": []
     }
   }
