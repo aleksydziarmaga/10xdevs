@@ -16,3 +16,11 @@ Tracking and managing home budget in excel file is not very user friendly. It is
 - Spending tracker with what was bought, how much it cost, expense type and date(optional) 
 - add charts which will compare prospective revenue split with actual
 - add chart which will compare prospective expense
+- user can add someone to see their wallet only in read-mode
+
+### What NOT to include
+- mobile application (only web)
+
+### Success Criteria
+- User can create, configure and manage their wallet
+- User can see other wallet after invite
