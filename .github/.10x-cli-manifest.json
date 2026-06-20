@@ -1,8 +1,8 @@
 {
   "package": "@przeprogramowani/10x-cli",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "manifestVersion": 3,
-  "lastApplied": "2026-06-17T19:47:26.231Z",
+  "lastApplied": "2026-06-20T13:16:59.631Z",
   "lessonId": "m1l4",
   "course": "10xdevs3",
   "tool": "copilot",
@@ -233,7 +233,7 @@
       "configs": []
     },
     "m1l4": {
-      "appliedAt": "2026-06-17T19:47:26.230Z",
+      "appliedAt": "2026-06-20T13:16:59.629Z",
       "skills": {
         "10x-init": {
           "files": [
