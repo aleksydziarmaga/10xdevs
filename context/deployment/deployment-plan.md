@@ -2,7 +2,7 @@
 **Approved and finalized on 2026-06-22**
 
 ## Executive Summary
-Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Supports both manual CLI deployment (`wrangler deploy`) and automatic deployment on push to main via Cloudflare Pages native GitHub integration. Single production environment backed by the infrastructure decision documented in `context/foundation/infrastructure.md`.
+Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Supports both manual CLI deployment (`npx wrangler deploy`) and automatic deployment on push to main via Cloudflare Pages native GitHub integration. Single production environment backed by the infrastructure decision documented in `context/foundation/infrastructure.md`.
 
 ---
 
@@ -31,7 +31,7 @@ Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Suppor
 
 ### ✅ Cloudflare Account & Project Setup
 - [ ] **Cloudflare account**: Exists and verified
-- [ ] **Wrangler CLI authenticated**: `wrangler login` succeeds
+- [ ] **Wrangler CLI authenticated**: `npx wrangler login` succeeds
 - [ ] **Cloudflare Pages project created**: Dashboard shows Pages project linked to this repo
 - [ ] **Project name in wrangler.jsonc**: Matches Cloudflare Pages project name (currently: `10x-astro-starter`)
 
@@ -43,21 +43,21 @@ Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Suppor
 
 1. **Authenticate with Cloudflare**
    ```bash
-   wrangler login
+   npx wrangler login
    ```
    Opens browser for OAuth. Confirm account and return to terminal.
 
 2. **Configure Runtime Secrets**
    ```bash
-   wrangler secret put SUPABASE_URL
+   npx wrangler secret put SUPABASE_URL
    # Paste your Supabase project URL, then Ctrl+D
    
-   wrangler secret put SUPABASE_KEY
+   npx wrangler secret put SUPABASE_KEY
    # Paste your Supabase anon key, then Ctrl+D
    ```
    Verify secrets were stored:
    ```bash
-   wrangler secret list
+   npx wrangler secret list
    ```
    Output should show both `SUPABASE_URL` and `SUPABASE_KEY`.
 
@@ -113,7 +113,7 @@ Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Suppor
 
 ### Code Rollback (Fast)
 ```bash
-wrangler rollback
+npx wrangler rollback
 ```
 - Lists previous 10 deployments
 - User selects which to restore
@@ -134,7 +134,7 @@ If a migration caused issues:
 
 ### Accessing Logs
 ```bash
-wrangler tail --format pretty
+npx wrangler tail --format pretty
 ```
 - Real-time logs from all function invocations
 - Includes errors, warnings, and console output
@@ -146,7 +146,7 @@ wrangler tail --format pretty
 
 ### Emergency Rollback
 ```bash
-wrangler rollback --message "Emergency rollback due to X issue"
+npx wrangler rollback --message "Emergency rollback due to X issue"
 ```
 Specify a previous deployment ID to revert to immediately.
 
@@ -161,7 +161,7 @@ Specify a previous deployment ID to revert to immediately.
 
 | Issue | Cause | Fix |
 |-------|-------|-----|
-| `Error: Unauthorized` during `wrangler login` | Not authenticated with Cloudflare | Run `wrangler logout` then `wrangler login` again |
+| `Error: Unauthorized` during `npx wrangler login` | Not authenticated with Cloudflare | Run `npx wrangler logout` then `npx wrangler login` again |
 | Build fails with `Node.js compatibility` | Dependency uses Node.js API incompatible with workerd | Add flag to `wrangler.jsonc`: `"compatibility_flags": ["nodejs_compat"]` (already set) |
 | `SUPABASE_URL` is undefined in runtime | Secret not set in Cloudflare Pages env vars | Verify in Pages dashboard Settings → Environment variables |
 | Deployment succeeds but app shows 404 | Build output directory is wrong | Check Pages build settings: output directory must be `dist/` |
@@ -173,7 +173,7 @@ Specify a previous deployment ID to revert to immediately.
 
 - **Cloudflare Token**: Stored locally in `~/.wrangler/config.toml` (gitignored)
 - **Supabase Keys**: Never commit `.env` file; use environment variables in Cloudflare Pages only
-- **Who Can Deploy**: Anyone with `wrangler login` credentials to the Cloudflare account
+- **Who Can Deploy**: Anyone with `npx wrangler login` credentials to the Cloudflare account
 - **Recommended**: Restrict deployments via Cloudflare Access or branch protection rules (out of scope for MVP)
 
 ---
@@ -181,11 +181,11 @@ Specify a previous deployment ID to revert to immediately.
 ## Success Criteria
 
 ✅ **Deploy is successful when:**
-1. `wrangler deploy` exits with status 0
+1. `npx wrangler deploy` exits with status 0
 2. Deployed URL is accessible and returns 200 OK
 3. Supabase authentication flows work (sign-up, sign-in, sign-out)
-4. `wrangler tail` shows no error logs on home page load
-5. Previous deployment can be restored via `wrangler rollback`
+4. `npx wrangler tail` shows no error logs on home page load
+5. Previous deployment can be restored via `npx wrangler rollback`
 
 ---
 
@@ -202,5 +202,5 @@ Specify a previous deployment ID to revert to immediately.
 - Add branch protection rule to main (require approval before auto-deploy)
 - Set up Cloudflare Analytics for performance monitoring
 - Create `context/deployment/manual-deploy.md` with team-specific runbook
-- Configure `wrangler tail` to stream logs to external observability tool
+- Configure `npx wrangler tail` to stream logs to external observability tool
 - Plan multi-region failover strategy (currently out of scope)
