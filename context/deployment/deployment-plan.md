@@ -1,6 +1,6 @@
 # Deployment Plan for HomeWallet MVP
 **Approved and finalized on 2026-06-22**
-**Status Updated: 2026-06-23 (Pre-Deployment Checklist Verification)**
+**Status Updated: 2026-06-23 (Phase 1 + Phase 2 complete, auto-deploy verified)**
 
 ## Executive Summary
 Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Supports both manual CLI deployment (`npx wrangler deploy`) and automatic deployment on push to main via Cloudflare Pages native GitHub integration. Single production environment backed by the infrastructure decision documented in `context/foundation/infrastructure.md`.
@@ -52,7 +52,8 @@ Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Suppor
 | Local Preview | ✅ Complete | `npm run preview` confirmed working on localhost:4321 |
 | Worker Deployed | ✅ Complete | https://10x-astro-starter.redron90.workers.dev (HTTP 200) |
 | Secrets Configured | ✅ Complete | SUPABASE_URL + SUPABASE_KEY set on Cloudflare |
-| **OVERALL** | **✅ PRODUCTION READY** | **All pre-deployment steps completed, app is live** |
+| Auto-Deploy (Pages) | ✅ Complete | GitHub integration enabled; build+deployment succeeded on test commit `2775c8e` |
+| **OVERALL** | **✅ PRODUCTION READY** | **Manual deploy and Pages auto-deploy are both operational** |
 
 ### What Was Done (Completed Today)
 
@@ -69,14 +70,9 @@ Deploy HomeWallet (Astro 6 SSR + Supabase) to Cloudflare Workers + Pages. Suppor
 
 ### Next Steps (Optional Setup for Auto-Deploy)
 
-To enable automatic deployment on push to `main` branch via GitHub → Cloudflare Pages:
+✅ Completed on 2026-06-23.
 
-1. Log into Cloudflare Dashboard → Pages
-2. Create new Pages project, connect GitHub repository (`aleksydziarmaga/10xdevs`)
-3. Set build command: `npm run build`
-4. Set build output directory: `dist/`
-5. Add environment variables: `SUPABASE_URL` + `SUPABASE_KEY`
-6. Enable auto-deploy on main branch push
+Cloudflare Pages auto-deploy is enabled for `main`, and a verification commit (`2775c8e`) built and deployed successfully.
 
 ---
 
@@ -250,11 +246,14 @@ Specify a previous deployment ID to revert to immediately.
 
 ## Phase 2 Verification Log
 
-**Test Commit Pushed: 2026-06-23 15:07 UTC+2**
+**Initial Test Commit: 2026-06-23 15:07 UTC+2**
+- Commit: `026de85`
+- Message: `test: verify phase 2 auto-deploy`
+- Result: build failed (rerun required)
 
-Testing auto-deployment trigger via GitHub → Cloudflare Pages integration.
-- Commit message: "test: verify phase 2 auto-deploy"
-- Target branch: main
-- Expected: Cloudflare Pages detects push, triggers build, and deploys automatically
+**Rerun Test Commit: 2026-06-23 20:23 UTC+2**
+- Commit: `2775c8e`
+- Message: `test: rerun cloudflare pages auto-deploy`
+- Result: ✅ build and deployment successful in Cloudflare Pages
 
-Check deployment status in Cloudflare dashboard or via: `wrangler deployments list`
+Verification source: Cloudflare Dashboard → Pages → Deployments.
