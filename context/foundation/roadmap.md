@@ -63,6 +63,14 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Risk:** Only 6 days to ship. Schema mistakes cascade into all slices. Mitigation: validate with S-01 logic early.
 - **Status:** ready
 
+#### F-01 acceptance checklist for S-01 handoff
+
+- [x] Domain schema migrations exist for wallet/template/monthly/expense model
+- [x] Owner isolation is enforced with RLS policies across all domain tables
+- [x] Snapshot + period guard behavior is covered by reproducible SQL verification
+- [x] Query-path indexes exist for wallet/period/category/date access patterns
+- [x] Local verification workflow is documented and executable
+
 ## Slices
 
 ### S-01: Owner Budget Template Setup

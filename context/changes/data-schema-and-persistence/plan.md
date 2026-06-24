@@ -331,17 +331,17 @@ Add MVP-appropriate indexing and reproducible developer verification flow to kee
 
 #### Manual
 
-- [ ] 3.5 US-01 and US-02 base data scenario confirms period and history consistency
+- [x] 3.5 US-01 and US-02 base data scenario confirms period and history consistency
 
 ### Phase 4: Performance baseline & developer verification workflow
 
 #### Automated
 
-- [ ] 4.1 Agreed indexes exist for high-frequency query paths
-- [ ] 4.2 Local reset and seed workflow runs without missing-file or ordering errors
-- [ ] 4.3 Linting and build pass
+- [x] 4.1 Agreed indexes exist for high-frequency query paths
+- [x] 4.2 Local reset and seed workflow runs without missing-file or ordering errors
+- [x] 4.3 Linting and build pass
 
 #### Manual
 
-- [ ] 4.4 Representative summary and list queries meet MVP responsiveness expectations
-- [ ] 4.5 F-01 acceptance checklist is ready for S-01 handoff
+- [x] 4.4 Representative summary and list queries meet MVP responsiveness expectations
+- [x] 4.5 F-01 acceptance checklist is ready for S-01 handoff

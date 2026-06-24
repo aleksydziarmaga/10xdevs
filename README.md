@@ -111,7 +111,25 @@ npx supabase stop
 
 The local Studio UI is available at `http://localhost:54323`.
 
-No database tables or migrations are required — this project uses Supabase Auth's built-in `auth.users` table only.
+### HomeWallet F-01 local verification workflow
+
+Run this sequence after pulling schema changes:
+
+```bash
+npx supabase start
+npx supabase db reset
+npx supabase db query --file supabase/schema-validation.sql
+npx supabase db query --file supabase/rls-policy-verification.sql
+npx supabase db query --file supabase/phase3-snapshot-verification.sql
+npx supabase db query --file supabase/index-verification.sql
+npm run lint
+npm run build
+```
+
+Expected outcome:
+- reset applies all migrations and `supabase/seed.sql` without missing-file errors
+- schema + RLS + snapshot + index verification scripts complete without exceptions
+- lint and build pass
 
 ### Using a cloud Supabase project instead
 
