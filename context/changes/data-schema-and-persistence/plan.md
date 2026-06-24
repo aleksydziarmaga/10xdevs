@@ -296,28 +296,28 @@ Add MVP-appropriate indexing and reproducible developer verification flow to kee
 
 #### Automated
 
-- [x] 1.1 Migration applies cleanly on reset
-- [x] 1.2 Domain tables keys and checks exist as expected
-- [x] 1.3 Linting passes
-- [x] 1.4 Build succeeds
+- [x] 1.1 Migration applies cleanly on reset — ebafcf2
+- [x] 1.2 Domain tables keys and checks exist as expected — ebafcf2
+- [x] 1.3 Linting passes — ebafcf2
+- [x] 1.4 Build succeeds — ebafcf2
 
 #### Manual
 
-- [x] 1.5 Relational links match roadmap F-01 expectations
-- [x] 1.6 Sample inserts validate integer amount and constraints behavior
+- [x] 1.5 Relational links match roadmap F-01 expectations — ebafcf2
+- [x] 1.6 Sample inserts validate integer amount and constraints behavior — ebafcf2
 
 ### Phase 2: Ownership isolation & RLS
 
 #### Automated
 
-- [ ] 2.1 RLS is enabled for all domain tables
-- [ ] 2.2 Owner policy smoke checks pass for allowed and denied paths
-- [ ] 2.3 Linting and build pass
+- [x] 2.1 RLS is enabled for all domain tables
+- [x] 2.2 Owner policy smoke checks pass for allowed and denied paths
+- [x] 2.3 Linting and build pass
 
 #### Manual
 
-- [ ] 2.4 Two users can only access their own wallet data
-- [ ] 2.5 Cross-owner access attempts fail with expected permission errors
+- [x] 2.4 Two users can only access their own wallet data
+- [x] 2.5 Cross-owner access attempts fail with expected permission errors
 
 ### Phase 3: Budget lifecycle modeling
 
