@@ -193,7 +193,8 @@ Finalize behavioral persistence rules for template instantiation, monthly snapsh
 
 #### Manual Verification:
 
-- End-to-end DB scenario for US-01/US-02 base data confirms stable period attribution and historical consistency
+- Foundation-stage DB lifecycle scenario confirms stable period attribution and historical consistency (template -> monthly snapshot -> expense history under category changes), without UI dependencies.
+- Full UI end-to-end verification for US-01/US-02 is deferred to slices S-01..S-04 once application flows exist.
 
 **Implementation Note**: After completing this phase and all automated verification passes, pause here for manual confirmation from the human that the manual testing was successful before proceeding to the next phase.
 
@@ -310,23 +311,23 @@ Add MVP-appropriate indexing and reproducible developer verification flow to kee
 
 #### Automated
 
-- [x] 2.1 RLS is enabled for all domain tables
-- [x] 2.2 Owner policy smoke checks pass for allowed and denied paths
-- [x] 2.3 Linting and build pass
+- [x] 2.1 RLS is enabled for all domain tables — fc10454
+- [x] 2.2 Owner policy smoke checks pass for allowed and denied paths — fc10454
+- [x] 2.3 Linting and build pass — fc10454
 
 #### Manual
 
-- [x] 2.4 Two users can only access their own wallet data
-- [x] 2.5 Cross-owner access attempts fail with expected permission errors
+- [x] 2.4 Two users can only access their own wallet data — fc10454
+- [x] 2.5 Cross-owner access attempts fail with expected permission errors — fc10454
 
 ### Phase 3: Budget lifecycle modeling
 
 #### Automated
 
-- [ ] 3.1 Monthly snapshot remains unchanged after template edits
-- [ ] 3.2 Expense category snapshot remains stable after category rename or delete
-- [ ] 3.3 Expense outside existing monthly period is rejected
-- [ ] 3.4 Linting and build pass
+- [x] 3.1 Monthly snapshot remains unchanged after template edits
+- [x] 3.2 Expense category snapshot remains stable after category rename or delete
+- [x] 3.3 Expense outside existing monthly period is rejected
+- [x] 3.4 Linting and build pass
 
 #### Manual
 
