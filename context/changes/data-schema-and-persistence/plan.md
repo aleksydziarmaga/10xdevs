@@ -296,15 +296,15 @@ Add MVP-appropriate indexing and reproducible developer verification flow to kee
 
 #### Automated
 
-- [ ] 1.1 Migration applies cleanly on reset
-- [ ] 1.2 Domain tables keys and checks exist as expected
-- [ ] 1.3 Linting passes
-- [ ] 1.4 Build succeeds
+- [x] 1.1 Migration applies cleanly on reset
+- [x] 1.2 Domain tables keys and checks exist as expected
+- [x] 1.3 Linting passes
+- [x] 1.4 Build succeeds
 
 #### Manual
 
-- [ ] 1.5 Relational links match roadmap F-01 expectations
-- [ ] 1.6 Sample inserts validate integer amount and constraints behavior
+- [x] 1.5 Relational links match roadmap F-01 expectations
+- [x] 1.6 Sample inserts validate integer amount and constraints behavior
 
 ### Phase 2: Ownership isolation & RLS
 
